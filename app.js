@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
+URI = process.env.URI
 
-mongoose.connect('mongodb+srv://Arbii_xD:madnimunna@cluster0.08grc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true  , useUnifiedTopology: true }).then(() => {
+mongoose.connect(URI, { useNewUrlParser: true  , useUnifiedTopology: true }).then(() => {
     console.log('Connected to database!');
 }).catch((err) => {
     console.log(`Connection failed! ${err}`);
